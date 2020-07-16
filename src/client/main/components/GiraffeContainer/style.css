@@ -1,0 +1,28 @@
+.giraffeContainer {
+  width: 1133px;
+  height: 876px;
+
+  margin-top: 12px;
+  margin-right: 13px;
+  background: #ffffff;
+  border-radius: 25px;
+  padding: 35px 51px;
+}
+.giraffeContainer .title,
+.addButton {
+  display: flex;
+  align-items: center;
+}
+.giraffeContainer title h2 {
+  font-weight: bold;
+  font-size: 32px;
+  color: #668663;
+  line-height: 37px;
+}
+.addButton {
+  width: 37px;
+  height: 37px;
+  background-color: #668663;
+  color: #ffffff;
+  border-radius: 52px;
+}
