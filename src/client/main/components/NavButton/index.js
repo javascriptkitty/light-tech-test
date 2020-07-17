@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./style.css";
+import "./style.scss";
 
 export default function NavButton(props) {
   const { button } = props;

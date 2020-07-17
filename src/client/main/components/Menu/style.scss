@@ -1,0 +1,49 @@
+.menu {
+  margin: 17px 40px 36px 50px;
+  border-bottom: 3px solid #d9d9d9;
+  color: #484848;
+  font-style: normal;
+  display: flex;
+  justify-content: space-between;
+
+  .logo,
+  .tabs {
+    display: flex;
+    align-items: center;
+  }
+  .logo {
+    margin-bottom: 7px;
+    img {
+      width: 34px;
+      height: 34px;
+      margin-left: 24px;
+      margin-right: 13px;
+    }
+    i {
+      color: #567354;
+      font-size: 24px;
+      line-height: 28px;
+    }
+  }
+  .tabs {
+    color: #d9d9d9;
+    margin-top: 10px;
+    margin-bottom: 11px;
+    .tab {
+      margin-right: 19px;
+      display: block;
+    }
+    .addButton {
+      background: #d9d9d9;
+
+      width: 20px;
+      height: 20px;
+      i {
+        color: #ffffff;
+        font-weight: 900;
+        font-size: 11px;
+        line-height: 13px;
+      }
+    }
+  }
+}

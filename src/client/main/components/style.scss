@@ -1,3 +1,7 @@
+$cactus-light: #668663;
+$cactus: #567354;
+$cactus-dark: #435f40;
+
 .container {
   width: 1440px;
   height: 900px;
@@ -8,8 +12,12 @@
   justify-content: space-between;
 }
 button {
+  color: #ffffff;
   outline: none;
   border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 .centered {
   justify-content: center;

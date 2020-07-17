@@ -1,0 +1,80 @@
+.giraffeCard {
+  position: relative;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 236px;
+  height: 495px;
+  color: #435f40;
+  background: #f3dbc7;
+  border-radius: 28px;
+  padding: 16px 23px 20px 24px;
+
+  margin-right: 33px;
+
+  .image {
+    width: 145px;
+    height: 145px !important;
+    background: #ffffff;
+    border-radius: 85px;
+  }
+
+  .info {
+    .general {
+      justify-content: space-between;
+    }
+    .icons {
+      justify-content: space-between;
+    }
+    .general {
+      width: 189px;
+      height: 39px;
+      background: #dcb18b;
+      border-radius: 58px;
+
+      color: #333333;
+      font-weight: bold;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 21px;
+    }
+
+    .icons i {
+      font-weight: 900;
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    h3 {
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 26px;
+
+      text-align: center;
+    }
+
+    .parameters p {
+      font-size: 15px;
+    }
+  }
+}
+
+.giraffeCard,
+.info .general,
+.info .icons {
+  display: flex;
+}
+
+.editButton {
+  background-color: transparent;
+  align-self: flex-end;
+  font-size: 18px;
+  font-weight: 900;
+  color: #435f40;
+}
+.saveButton {
+  background: #b4b4b4;
+  border-radius: 33px;
+  width: 129px;
+  height: 39px;
+}
