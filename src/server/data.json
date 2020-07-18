@@ -1,0 +1,56 @@
+[
+  {
+    "_id": "5f130c891f8a6ab093d90bc6",
+    "name": "Мотильда",
+    "gender": "Ж",
+    "weight": 800,
+    "height": 4,
+    "color": "Стандарт",
+    "diet": "Растительная",
+    "character": "Кокетка"
+  },
+
+  {
+    "_id": "5f131bae1f8a6ab093d90bc7",
+    "name": "Гога",
+    "gender": "М",
+    "weight": 900,
+    "height": 4.9,
+    "color": "Жирафовый",
+    "diet": "Шашлычная ",
+    "character": "Вспыльчивый"
+  },
+
+  {
+    "_id": "5f131bea1f8a6ab093d90bc8",
+    "name": "Шнур",
+    "gender": "М",
+    "weight": 800,
+    "height": 5.7,
+    "color": "Нездоровый",
+    "diet": "Жвачная",
+    "character": "Хулиган"
+  },
+
+  {
+    "_id": "5f131c021f8a6ab093d90bc9",
+    "name": "Леонид",
+    "gender": "М",
+    "weight": 1000,
+    "height": 6,
+    "color": "Леонидовый",
+    "diet": "Ест детей",
+    "character": "Нарцисс"
+  },
+
+  {
+    "_id": "5f131c191f8a6ab093d90bca",
+    "name": "Лара",
+    "gender": "Ж",
+    "weight": 850,
+    "height": 5,
+    "color": "Пятнистый",
+    "diet": "Диетическая",
+    "character": "Покладистый"
+  }
+]

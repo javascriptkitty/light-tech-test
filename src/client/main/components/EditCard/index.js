@@ -1,10 +1,13 @@
 import React from "react";
 import "./style.scss";
 
-export default function EditCard() {
+export default function EditCard(props) {
+  const handleClick = () => {
+    props.setEdit();
+  };
   return (
     <div className="editBlock">
-      <button>
+      <button onClick={handleClick}>
         <i className="far fa-trash-alt"></i> <span>Редактировать</span>
       </button>
       <button>

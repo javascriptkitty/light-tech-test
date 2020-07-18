@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import NavBar from "./NavBar";
 import Main from "./Main";
 import { hot } from "react-hot-loader/root";

@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import GiraffeContainer from "../GiraffeContainer";
 import Menu from "../Menu";
+import Capacity from "../Capacity";
+import axios from "axios";
 import "./style.scss";
 
+let animals;
 export default function Main() {
+  const [giraffes, setGiraffes] = React.useState([]);
+
+  useEffect(() => {
+    if (!animals) {
+      animals = axios.get("/api/giraffe");
+      animals.then((res) => {
+        setGiraffes(res.data);
+      });
+    }
+  });
   return (
     <div className="main">
       <Menu />
@@ -14,6 +27,7 @@ export default function Main() {
         </button>
       </div>
       <GiraffeContainer />
+      <Capacity />
     </div>
   );
 }

@@ -1,8 +1,9 @@
-import React from 'react';
-import { render } from 'react-dom';
-import App from './components';
+import React from "react";
+import { render } from "react-dom";
+import App from "./components";
+//import "normalize.css";
 render(
+  <App />,
 
-        <App/>
-    
-    , document.querySelector('#react-root'));
+  document.querySelector("#react-root")
+);

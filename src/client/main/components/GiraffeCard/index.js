@@ -1,15 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.scss";
 import EditCard from "../EditCard";
 
-export default function GiraffeCard() {
+const GiraffeCard = () => {
+  const [mode, setMode] = useState("view");
+  const [editBlock, showEditBlock] = useState(false);
+
+  const onSetEdit = () => {
+    debugger;
+    setMode("edit");
+    showEditBlock(false);
+  };
+  const onDelete = () => {};
+  const onDotsClick = () => {
+    showEditBlock(!editBlock);
+  };
+
+  const cardClassName = mode == "view" ? "giraffeCard" : "giraffeCard editCard";
+
   return (
-    <div className="giraffeCard ">
-      <button className="editButton">
+    <div className={cardClassName}>
+      <button className="editButton" onClick={onDotsClick}>
         <i className="fas fa-ellipsis-h" />
       </button>
-      <div className="image">
-        <img></img>
+      <div className="image centered">
+        <i className="fas fa-camera" />
       </div>
       <div className="info">
         <h3>Имя</h3>
@@ -33,8 +48,12 @@ export default function GiraffeCard() {
           </p>
         </div>
       </div>
-      {/* <button className="saveButton centered">Сохранить</button> */}
-      <EditCard />
+      {mode === "edit" ? (
+        <button className="saveButton centered">Сохранить</button>
+      ) : null}
+      {editBlock ? <EditCard setEdit={onSetEdit} delete={onDelete} /> : null}
     </div>
   );
-}
+};
+
+export default GiraffeCard;
