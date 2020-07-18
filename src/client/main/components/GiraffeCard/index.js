@@ -5,7 +5,7 @@ import EditCard from "../EditCard";
 export default function GiraffeCard() {
   return (
     <div className="giraffeCard ">
-      <button className="editButton centered">
+      <button className="editButton">
         <i className="fas fa-ellipsis-h" />
       </button>
       <div className="image">
@@ -13,9 +13,9 @@ export default function GiraffeCard() {
       </div>
       <div className="info">
         <h3>Имя</h3>
-        <div className="icons centered">
+        <div className="icons">
           <i className="fas fa-venus-mars" />
-          <i className="fas fa-balance-scale" style={{ paddingRight: "3px" }} />
+          <i className="fas fa-balance-scale" />
           <i className="fas fa-ruler-vertical" />
         </div>
         <div className="general centered">
@@ -33,7 +33,7 @@ export default function GiraffeCard() {
           </p>
         </div>
       </div>
-      <button className="saveButton centered">Сохранить</button>
+      {/* <button className="saveButton centered">Сохранить</button> */}
       <EditCard />
     </div>
   );

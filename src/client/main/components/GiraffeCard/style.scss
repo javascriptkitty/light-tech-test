@@ -8,30 +8,41 @@
   color: #435f40;
   background: #f3dbc7;
   border-radius: 28px;
-  padding: 16px 23px 20px 24px;
-
   margin-right: 33px;
 
   .image {
     width: 145px;
-    height: 145px !important;
+    height: 145px;
     background: #ffffff;
     border-radius: 85px;
+    margin-bottom: 27px;
+    margin-top: 35px;
   }
 
   .info {
     .general {
       justify-content: space-between;
+      padding-right: 24px;
+      padding-left: 23px;
     }
     .icons {
-      justify-content: space-between;
+      width: 150px;
+      margin-top: 31px;
+      margin-left: 16px;
+      .fa-venus-mars {
+        margin-right: 36px;
+      }
+      .fa-balance-scale {
+        margin-right: 40px;
+      }
     }
     .general {
       width: 189px;
       height: 39px;
       background: #dcb18b;
       border-radius: 58px;
-
+      margin-top: 13px;
+      margin-bottom: 22px;
       color: #333333;
       font-weight: bold;
       font-weight: 600;
@@ -49,12 +60,17 @@
       font-weight: bold;
       font-size: 22px;
       line-height: 26px;
-
+      margin: 0;
       text-align: center;
     }
 
-    .parameters p {
-      font-size: 15px;
+    .parameters {
+      padding-left: 9px;
+      p {
+        font-size: 15px;
+        margin-top: 0;
+        margin-bottom: 19px;
+      }
     }
   }
 }
@@ -67,7 +83,10 @@
 
 .editButton {
   background-color: transparent;
-  align-self: flex-end;
+  padding: 0 !important;
+  position: absolute;
+  right: 23px;
+  top: 16px;
   font-size: 18px;
   font-weight: 900;
   color: #435f40;
