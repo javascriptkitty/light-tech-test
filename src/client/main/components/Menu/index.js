@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import logo from "../../../../../public/img/logo.png";
+import logo from "../../../../../public/image/logo.png";
 import "./style.scss";
 
 export default function Menu() {

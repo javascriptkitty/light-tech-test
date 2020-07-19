@@ -63,18 +63,31 @@
       line-height: 28px;
     }
 
-    h3 {
+    .giraffeName {
       font-weight: bold;
       font-size: 22px;
       line-height: 26px;
       margin: 0;
+      display: block;
       text-align: center;
     }
 
     .parameters {
       padding-left: 9px;
+      width: 189px;
       padding-bottom: 6px;
       p {
+        display: flex;
+      }
+      input {
+        width: 100%;
+        text-align: left;
+      }
+      strong {
+        margin-right: 5px;
+      }
+      span {
+        display: inline-block;
         font-size: 15px;
         margin-top: 0;
         margin-bottom: 19px;
@@ -96,6 +109,19 @@
   box-shadow: 0px 4px 15px #869cb0;
   .info .icons {
     margin-top: 24px;
+  }
+  input {
+    text-align: center;
+    background: transparent;
+    border: none;
+    width: 100%;
+    // border-bottom: 2px solid #435f40;
+    &:active {
+      outline: none;
+    }
+    &:focus {
+      outline: none;
+    }
   }
 }
 

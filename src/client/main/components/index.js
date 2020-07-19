@@ -1,8 +1,7 @@
-import React, { Suspense, useState, useEffect } from "react";
+import React from "react";
 import NavBar from "./NavBar";
 import Main from "./Main";
 import { hot } from "react-hot-loader/root";
-import UploadExample from "./uploadExample";
 import "./style.scss";
 
 function App() {
@@ -10,8 +9,6 @@ function App() {
     <div className="container">
       <NavBar />
       <Main />
-      {/* <h1 style={{ textAlign: 'center', textTransform: 'uppercase' }}>Let's start dev</h1>
-            <UploadExample/> */}
     </div>
   );
 }

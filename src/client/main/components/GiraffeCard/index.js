@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./style.scss";
 import EditCard from "../EditCard";
+import UploadImage from "../UploadImage";
 
 const GiraffeCard = () => {
-  const [mode, setMode] = useState("view");
+  const [mode, setMode] = useState("edit");
   const [editBlock, showEditBlock] = useState(false);
 
   const onSetEdit = () => {
@@ -24,27 +25,34 @@ const GiraffeCard = () => {
         <i className="fas fa-ellipsis-h" />
       </button>
       <div className="image centered">
-        <i className="fas fa-camera" />
+        <UploadImage />
       </div>
       <div className="info">
-        <h3>Имя</h3>
+        {RenderEditView(mode, "xxx", "giraffeName")}
         <div className="icons">
           <i className="fas fa-venus-mars" />
           <i className="fas fa-balance-scale" />
           <i className="fas fa-ruler-vertical" />
         </div>
         <div className="general centered">
-          <span>-</span> <span>-</span> <span>-</span>
+          {RenderEditView(mode, "-")}
+          {RenderEditView(mode, "-")}
+          {RenderEditView(mode, "-")}
         </div>
         <div className="parameters">
           <p>
             <strong>Цвет:</strong>
+            {RenderEditView(mode, "-")}
           </p>
+          <n />
           <p>
             <strong>Диета:</strong>
+            {RenderEditView(mode, "-")}
           </p>
+          <n />
           <p>
             <strong>Характер:</strong>
+            {RenderEditView(mode, "-")}
           </p>
         </div>
       </div>
@@ -57,3 +65,15 @@ const GiraffeCard = () => {
 };
 
 export default GiraffeCard;
+
+function RenderEditView(mode, data, className) {
+  return (
+    <>
+      {mode === "view" ? (
+        <span className={className}>{data}</span>
+      ) : (
+        <input type="text" value={data} />
+      )}
+    </>
+  );
+}

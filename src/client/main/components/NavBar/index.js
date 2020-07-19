@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.scss";
 import NavButton from "../NavButton";
-import logo from "../../../../../public/img/logo.png";
+import logo from "../../../../../public/image/logo.png";
 
 const buttonTitles = [
   { icon: "fas fa-home ", title: "Главная" },
@@ -15,7 +15,7 @@ export default function NavBar() {
   return (
     <div className="navBar">
       <div className="logo">
-        <img src={logo} alt="logo" />
+        <img src="image/logo.png" alt="logo" />
         <div className="title">
           <p>Ферма Заслуженных Жирафов </p>
           <span>России и СНГ</span>
