@@ -1,5 +1,6 @@
 .capacity {
   position: absolute;
+  flex-direction: column;
   bottom: 0;
   right: 40px;
   background: #668663;
@@ -8,17 +9,74 @@
   width: 506px;
   height: 217px - 72px;
 
-  h2 {
+  p {
     font-size: 50px;
     line-height: 59px;
+    margin: 22px 0 0 30px;
   }
-  p {
+  span {
+    display: inline-block;
+    margin-left: 9px;
     font-weight: bold;
     font-size: 20px;
     line-height: 23px;
   }
+  .perc {
+    position: relative;
+    .closeBtn {
+      margin-top: 14px;
+      right: 16.84px;
+      i {
+        font-size: 18px;
+        line-height: 21px;
+      }
+    }
+  }
+  .info {
+    height: 100%;
+    position: relative;
+    .progress,
+    .infoBtn {
+      position: absolute;
+      background: #435f40;
+      border-radius: 35px;
+      height: 31px;
+      bottom: 0;
+      margin-bottom: 26px;
+    }
+    .progress {
+      width: 323px;
+      padding: 4.23px 5.14px;
+      left: 0;
+      margin-left: 29px;
+      .progressLine {
+        background: #f3dbc7;
+        border-radius: 35px;
+        width: 100% * 0.75;
+        height: 100%;
+      }
+    }
+    .infoBtn {
+      font-size: 12px;
+      line-height: 14px;
+      width: 110px;
+      right: 0;
+      margin-right: 21px;
+    }
+  }
 }
 
-.capacity {
+.capacity,
+.capacity .info {
   display: flex;
+}
+.closeBtn {
+  position: absolute;
+  background-color: transparent;
+  top: 0;
+  right: 0;
+  padding: 0;
+  i {
+    transform: rotate(45deg);
+  }
 }

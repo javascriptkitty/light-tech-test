@@ -1,7 +1,7 @@
 const Giraffe = require("../models/giraffe").Giraffe;
 
 module.exports = {
-  find: function (req, res) {
+  findAll: function (req, res) {
     Giraffe.find()
       .then((dbModel) => {
         res.json(dbModel);

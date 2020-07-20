@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./style.scss";
 import EditCard from "../EditCard";
 import UploadImage from "../UploadImage";
+import axios from "axios";
 
 const GiraffeCard = () => {
   const [mode, setMode] = useState("edit");
@@ -17,6 +18,23 @@ const GiraffeCard = () => {
     showEditBlock(!editBlock);
   };
 
+  // const obj = {
+  //   _id: "5f130c891f8a6ab093d90bc6",
+  //   name: "Мотильда",
+  //   gender: "Ж",
+  //   weight: 800,
+  //   height: 4,
+  //   color: "Стандарт",
+  //   diet: "Растительная",
+  //   character: "Кокетка",
+  // };
+  const onSave = () => {
+    // setMode("view");
+    // debugger;
+    // axios.post("/api/giraffe", obj).then((res) => {
+    //   console.log(res.data);
+    // });
+  };
   const cardClassName = mode == "view" ? "giraffeCard" : "giraffeCard editCard";
 
   return (
@@ -44,12 +62,10 @@ const GiraffeCard = () => {
             <strong>Цвет:</strong>
             {RenderEditView(mode, "-")}
           </p>
-          <n />
           <p>
             <strong>Диета:</strong>
             {RenderEditView(mode, "-")}
           </p>
-          <n />
           <p>
             <strong>Характер:</strong>
             {RenderEditView(mode, "-")}
@@ -57,7 +73,9 @@ const GiraffeCard = () => {
         </div>
       </div>
       {mode === "edit" ? (
-        <button className="saveButton centered">Сохранить</button>
+        <button className="saveButton centered" onClick={onSave}>
+          Сохранить
+        </button>
       ) : null}
       {editBlock ? <EditCard setEdit={onSetEdit} delete={onDelete} /> : null}
     </div>

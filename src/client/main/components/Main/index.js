@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import GiraffeContainer from "../GiraffeContainer";
 import Menu from "../Menu";
 import Capacity from "../Capacity";
+import Updates from "../Updates";
 import axios from "axios";
 import "./style.scss";
 
@@ -28,6 +29,7 @@ export default function Main() {
       </div>
       <GiraffeContainer />
       <Capacity />
+      <Updates />
     </div>
   );
 }

@@ -23,11 +23,12 @@ module.exports = (app) => {
 
   // Giraffe API
   app.post("/api/giraffe", (req, res) => {
-    giraffeController.post(req, res);
+    giraffeController.create(req, res);
   });
 
   app.get("/api/giraffe", (req, res) => {
-    giraffeController.find(req, res);
+    // debugger;
+    giraffeController.findAll(req, res);
   });
 
   app

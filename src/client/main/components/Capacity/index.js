@@ -4,18 +4,20 @@ import "./style.scss";
 export default function Capacity() {
   return (
     <div className="capacity">
-      <div className="info">
-        <div className="perc">
-          <h2>75%</h2>
-          <p>Заполнение вольера</p>
-        </div>
-        <div className="progress"></div>
-      </div>
-      <div className="close-info">
-        <button>
-          <i className="fas fa-close" />
+      <div className="perc">
+        <p>
+          75%<span>Заполнение вольера</span>
+        </p>
+        <button className="closeBtn">
+          <i className="fas fa-plus" />
         </button>
-        <button>Информация</button>
+      </div>
+      <div className="info">
+        <div className="progress">
+          <div className="progressLine" />
+        </div>
+
+        <button className="infoBtn centered">Информация</button>
       </div>
     </div>
   );
