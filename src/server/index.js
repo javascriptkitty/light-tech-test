@@ -24,7 +24,12 @@ app.use((req, res, next) => {
   );
   next();
 });
-app.use("/images", express.static(path.join(__dirname, "../../dist/image")));
+if (process.env.NODE_ENV == "production") {
+  app.use("/image", express.static(path.join(__dirname, "../../dist/image")));
+} else {
+  app.use("/image", express.static(path.join(__dirname, "../../public/image")));
+}
+
 app.use("/uploads", express.static(path.join(__dirname, "../../uploads")));
 
 require("./routes")(app);

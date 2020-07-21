@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import logo from "../../../../../public/image/logo.png";
 import "./style.scss";
 
 export default function Menu() {
@@ -8,7 +7,7 @@ export default function Menu() {
       <Tabs />
       <div className="logo">
         <i className="far fa-bell"> </i>
-        <img src={logo}></img>
+        <img src="/image/logo.png"></img>
         <span>hello@giraffe.com</span>
       </div>
     </div>

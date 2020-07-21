@@ -7,6 +7,7 @@ const GiraffeSchema = new Schema({
   gender: { type: String, required: true },
   weight: { type: Number, required: true },
   height: { type: Number, required: true },
+  photo: String,
   color: String,
   diet: String,
   character: String,
@@ -17,7 +18,7 @@ const GiraffeSchema = new Schema({
   },
 });
 
-const Giraffe = mongoose.model("giraffe", GiraffeSchema);
+const Giraffe = mongoose.model("Giraffe", GiraffeSchema);
 
 module.exports = {
   Giraffe,

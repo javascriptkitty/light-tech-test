@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 236px;
+  min-width: 236px;
   color: #435f40;
   background: #f3dbc7;
   border-radius: 28px;
@@ -16,7 +16,16 @@
     border-radius: 85px;
     margin-bottom: 27px;
     margin-top: 35px;
+    position: relative;
 
+    label {
+      position: absolute;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 85px;
+    }
     i {
       font-weight: 900;
       font-size: 48px;
@@ -64,26 +73,30 @@
     }
 
     .giraffeName {
-      font-weight: bold;
-      font-size: 22px;
-      line-height: 26px;
-      margin: 0;
-      display: block;
-      text-align: center;
+      // font-weight: bold;
+      // font-size: 22px;
+      // line-height: 26px;
+      // margin: 0;
+      color: #435f40;
+      // display: block;
+      // text-align: center;
     }
 
     .parameters {
       padding-left: 9px;
       width: 189px;
       padding-bottom: 6px;
-      p {
+      p,
+      input {
         display: flex;
         font-size: 15px;
         line-height: 18px;
+        font-weight: 300;
       }
       input {
         width: 100%;
         text-align: left;
+        color: #333333;
       }
       strong {
         margin-right: 5px;
@@ -103,24 +116,47 @@
   .info .icons {
     margin-top: 31px;
   }
+  .giraffeName {
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 26px;
+    margin: 0;
+
+    display: block;
+    text-align: center;
+  }
   .parameters p {
     margin-top: 0;
     margin-bottom: 19px;
+    span {
+      color: #333333;
+    }
   }
 }
 
 .editCard {
+  @extend %defaultStyle;
   height: 536px;
   box-shadow: 0px 4px 15px #869cb0;
+
   .info .icons {
     margin-top: 24px;
+  }
+  .info .general {
+    padding: 11px 0 9px 0;
+    padding-right: 0;
+  }
+  .general input {
+    line-height: 19px;
+    font-weight: bold;
+    color: #333333;
   }
   input {
     text-align: center;
     background: transparent;
     border: none;
     width: 100%;
-    // border-bottom: 2px solid #435f40;
+
     &:active {
       outline: none;
     }
@@ -131,6 +167,7 @@
 }
 
 .giraffeCard,
+.editCard,
 .info .general,
 .info .icons,
 .image {
@@ -143,7 +180,7 @@
   position: absolute;
   right: 23px;
   top: 16px;
-  font-size: 18px;
+
   font-weight: 900;
   color: #435f40;
 }

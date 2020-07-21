@@ -4,12 +4,12 @@ import EditCard from "../EditCard";
 import UploadImage from "../UploadImage";
 import axios from "axios";
 
-const GiraffeCard = () => {
+const GiraffeCard = (props) => {
   const [mode, setMode] = useState("edit");
   const [editBlock, showEditBlock] = useState(false);
 
+  const { giraffe } = props;
   const onSetEdit = () => {
-    debugger;
     setMode("edit");
     showEditBlock(false);
   };
@@ -18,57 +18,50 @@ const GiraffeCard = () => {
     showEditBlock(!editBlock);
   };
 
-  // const obj = {
-  //   _id: "5f130c891f8a6ab093d90bc6",
-  //   name: "Мотильда",
-  //   gender: "Ж",
-  //   weight: 800,
-  //   height: 4,
-  //   color: "Стандарт",
-  //   diet: "Растительная",
-  //   character: "Кокетка",
-  // };
   const onSave = () => {
-    // setMode("view");
+    setMode("view");
     // debugger;
     // axios.post("/api/giraffe", obj).then((res) => {
     //   console.log(res.data);
     // });
   };
-  const cardClassName = mode == "view" ? "giraffeCard" : "giraffeCard editCard";
+  const cardClassName = mode == "view" ? "giraffeCard" : "editCard";
 
+  const imgUrl = `/image/${giraffe.photo}`;
   return (
     <div className={cardClassName}>
       <button className="editButton" onClick={onDotsClick}>
         <i className="fas fa-ellipsis-h" />
       </button>
       <div className="image centered">
-        <UploadImage />
+        <img src={imgUrl} alt={giraffe.name} />
+
+        {mode === "edit" ? <UploadImage img={imgUrl} /> : null}
       </div>
       <div className="info">
-        {RenderEditView(mode, "xxx", "giraffeName")}
+        {RenderEditView(mode, giraffe.name, "giraffeName")}
         <div className="icons">
           <i className="fas fa-venus-mars" />
           <i className="fas fa-balance-scale" />
           <i className="fas fa-ruler-vertical" />
         </div>
         <div className="general centered">
-          {RenderEditView(mode, "-")}
-          {RenderEditView(mode, "-")}
-          {RenderEditView(mode, "-")}
+          {RenderEditView(mode, giraffe.gender)}
+          {RenderEditView(mode, giraffe.weight)}
+          {RenderEditView(mode, giraffe.height)}
         </div>
         <div className="parameters">
           <p>
             <strong>Цвет:</strong>
-            {RenderEditView(mode, "-")}
+            {RenderEditView(mode, giraffe.color)}
           </p>
           <p>
             <strong>Диета:</strong>
-            {RenderEditView(mode, "-")}
+            {RenderEditView(mode, giraffe.diet)}
           </p>
           <p>
             <strong>Характер:</strong>
-            {RenderEditView(mode, "-")}
+            {RenderEditView(mode, giraffe.character)}
           </p>
         </div>
       </div>
@@ -90,7 +83,7 @@ function RenderEditView(mode, data, className) {
       {mode === "view" ? (
         <span className={className}>{data}</span>
       ) : (
-        <input type="text" value={data} />
+        <input className={className} type="text" value={data} />
       )}
     </>
   );

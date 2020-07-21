@@ -7,7 +7,8 @@
     "height": 4,
     "color": "Стандарт",
     "diet": "Растительная",
-    "character": "Кокетка"
+    "character": "Кокетка",
+    "photo": "giraffe1.png"
   },
 
   {
@@ -18,7 +19,8 @@
     "height": 4.9,
     "color": "Жирафовый",
     "diet": "Шашлычная ",
-    "character": "Вспыльчивый"
+    "character": "Вспыльчивый",
+    "photo": "giraffe2.png"
   },
 
   {
@@ -29,7 +31,8 @@
     "height": 5.7,
     "color": "Нездоровый",
     "diet": "Жвачная",
-    "character": "Хулиган"
+    "character": "Хулиган",
+    "photo": "giraffe3.png"
   },
 
   {
@@ -40,7 +43,8 @@
     "height": 6,
     "color": "Леонидовый",
     "diet": "Ест детей",
-    "character": "Нарцисс"
+    "character": "Нарцисс",
+    "photo": "giraffe4.png"
   },
 
   {
@@ -51,6 +55,7 @@
     "height": 5,
     "color": "Пятнистый",
     "diet": "Диетическая",
-    "character": "Покладистый"
+    "character": "Покладистый",
+    "photo": "giraffe5.png"
   }
 ]
