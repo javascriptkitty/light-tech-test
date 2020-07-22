@@ -1,18 +1,35 @@
-const giraffeReducer = (state = [], action) => {
-  const newState = [...state];
+import * as ActionType from "../Actions/actionTypes.js";
+
+const initialState = { giraffes: [], loading: false };
+
+const giraffeReducer = (state = initialState, action) => {
+  debugger;
+  const newState = { ...state };
+
   if (action == null) {
     return state;
   }
+
   switch (action.type) {
-    case "update":
-      newState[action.index].name = action.name;
+    case "updateGiraffes":
+      const currentIndex = newState.giraffes.findIndex(
+        (el) => el._id === action.index
+      );
+      newState[currentIndex] = action.newValue;
       return newState;
-    case "add":
-      newState.push({ index: state.length, name: action.name });
+    case "addGiraffes":
+      newState.unshift(action.value);
       return newState;
-    case "delete":
-      newState.splice(action.index, 1);
+    case "deleteGiraffes":
+      const currentIndex = newState.giraffes.findIndex(
+        (el) => el._id === action.index
+      );
+      newState.splice(currentIndex, i);
       return newState;
+    case "loading":
+      return { ...state, loading: true };
+    case "getGiraffes":
+      return { ...state, giraffes: action.giraffes, loading: false };
     default:
       return state;
   }

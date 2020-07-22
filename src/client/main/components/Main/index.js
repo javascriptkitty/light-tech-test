@@ -5,46 +5,81 @@ import Capacity from "../Capacity";
 import Updates from "../Updates";
 import axios from "axios";
 import "./style.scss";
-import * as action from "../Redux/Actions";
+import {
+  updateAction,
+  addAction,
+  deleteAction,
+  fetchAction,
+} from "../Redux/Actions";
 import { connect } from "react-redux";
 
-const mapStateToProps = (state) => ({
-  giraffes: state,
-});
+const mapStateToProps = (state) => {
+  return {
+    giraffes: state.giraffes,
+    loading: state.loading,
+  };
+};
 
 const mapDispatchToProps = (dispatch) => ({
   updateAction: (index, newValue) => dispatch(updateAction(index, newValue)),
   deleteAction: (index) => dispatch(deleteAction(index)),
-  addAction: (giraffe) => dispatch(deleteAction(giraffe)),
+  addAction: (giraffe) => dispatch(addAction(giraffe)),
+  fetchAction: () => dispatch(fetchAction()),
 });
 
-let animals;
-const Main = ({ updateAction, deleteAction, addAction }) => {
-  const [giraffes, setGiraffes] = React.useState([]);
+class Main extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-  useEffect(() => {
-    if (!animals) {
-      debugger;
-      animals = axios.get("/api/giraffe");
-      animals.then((res) => {
-        setGiraffes(res.data);
-      });
-    }
-  });
-  return (
-    <div className="main" data-control="wheel">
-      <Menu />
-      <div className="title">
-        <h2>Жирафы</h2>
-        <button className="addButton centered">
-          <i className="fas fa-plus fa-lg"> </i>
-        </button>
+  onAddGiraffe = () => {
+    debugger;
+    this.props.addAction({
+      name: "Имя",
+      gender: "-",
+      weight: "-",
+      height: "-",
+      color: "",
+      diet: "",
+      character: "",
+      photo: "",
+    });
+  };
+
+  onSaveGiraffe = (id, value) => {
+    debugger;
+    this.props.updateAction(id, value);
+  };
+  onDeleteGiraffe = (id) => {
+    debugger;
+    this.props.deleteAction(id);
+  };
+
+  componentDidMount() {
+    this.props.fetchAction();
+  }
+
+  render() {
+    return (
+      <div className="main" data-control="wheel">
+        <Menu />
+        <div className="title">
+          <h2>Жирафы</h2>
+          <button className="addButton centered" onClick={this.onAddGiraffe}>
+            <i className="fas fa-plus fa-lg"> </i>
+          </button>
+        </div>
+        <GiraffeContainer
+          giraffes={this.props.giraffes}
+          onEditGiraffe={this.onEditGiraffe}
+          onDeleteGiraffe={this.onDeleteGiraffe}
+          onSaveGiraffe={this.onSaveGiraffe}
+        />
+        <Capacity />
+        <Updates />
       </div>
-      <GiraffeContainer giraffes={giraffes} />
-      <Capacity />
-      <Updates />
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Main);

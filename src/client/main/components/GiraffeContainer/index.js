@@ -3,12 +3,15 @@ import GiraffeCard from "../GiraffeCard";
 import "./style.scss";
 
 export default function GiraffeContainer(props) {
-  const { giraffes } = props;
-  return (
-    <div className="giraffeContainer">
-      {giraffes.map((el) => {
-        return <GiraffeCard key={el._id} giraffe={el} />;
-      })}
-    </div>
-  );
+  const cards = props.giraffes.map((giraffe, i) => (
+    <GiraffeCard
+      key={i}
+      giraffe={giraffe}
+      onEditGiraffe={props.onEditGiraffe}
+      onDeleteGiraffe={props.onDeleteGiraffe}
+      onSaveGiraffe={props.onSaveGiraffe}
+    />
+  ));
+
+  return <div className="giraffeContainer">{cards}</div>;
 }
