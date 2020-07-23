@@ -33,7 +33,6 @@ class Main extends React.Component {
   }
 
   onAddGiraffe = () => {
-    debugger;
     this.props.addAction({
       name: "Имя",
       gender: "-",

@@ -4,7 +4,7 @@ import EditCard from "../EditCard";
 import UploadImage from "../UploadImage";
 
 const GiraffeCard = (props) => {
-  const [mode, setMode] = useState("edit");
+  const [mode, setMode] = useState("view");
   const [editBlock, showEditBlock] = useState(false);
 
   const giraffe = { ...props.giraffe };
@@ -26,10 +26,7 @@ const GiraffeCard = (props) => {
   };
   const onSave = () => {
     setMode("view");
-    // debugger;
-    // axios.post("/api/giraffe", obj).then((res) => {
-    //   console.log(res.data);
-    // });
+
     props.onSaveGiraffe(giraffe._id, giraffe);
   };
   const cardClassName = mode == "view" ? "giraffeCard" : "editCard";

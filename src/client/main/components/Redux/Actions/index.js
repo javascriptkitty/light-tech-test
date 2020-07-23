@@ -12,7 +12,7 @@ export const updateAction = (index, newValue) => {
 
 export const addAction = (value) => {
   return (dispatch) => {
-    axios.post("/api/giraffe").then((res) => {
+    axios.post("/api/giraffe", value).then((res) => {
       dispatch({ type: ActionType.ADD_GIRAFFES, value });
     });
   };

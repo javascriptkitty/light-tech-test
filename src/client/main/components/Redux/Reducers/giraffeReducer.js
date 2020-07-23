@@ -9,19 +9,19 @@ const giraffeReducer = (state = initialState, action) => {
   if (action == null) {
     return state;
   }
-
+  let currentIndex;
   switch (action.type) {
     case "updateGiraffes":
-      const currentIndex = newState.giraffes.findIndex(
+      currentIndex = newState.giraffes.findIndex(
         (el) => el._id === action.index
       );
       newState[currentIndex] = action.newValue;
       return newState;
     case "addGiraffes":
-      newState.unshift(action.value);
+      newState.giraffes.unshift(action.value);
       return newState;
     case "deleteGiraffes":
-      const currentIndex = newState.giraffes.findIndex(
+      currentIndex = newState.giraffes.findIndex(
         (el) => el._id === action.index
       );
       newState.splice(currentIndex, i);

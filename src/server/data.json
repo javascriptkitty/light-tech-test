@@ -1,6 +1,5 @@
 [
   {
-    "_id": "5f130c891f8a6ab093d90bc6",
     "name": "Мотильда",
     "gender": "Ж",
     "weight": 800,
@@ -12,7 +11,6 @@
   },
 
   {
-    "_id": "5f131bae1f8a6ab093d90bc7",
     "name": "Гога",
     "gender": "М",
     "weight": 900,
@@ -24,7 +22,6 @@
   },
 
   {
-    "_id": "5f131bea1f8a6ab093d90bc8",
     "name": "Шнур",
     "gender": "М",
     "weight": 800,
@@ -36,7 +33,6 @@
   },
 
   {
-    "_id": "5f131c021f8a6ab093d90bc9",
     "name": "Леонид",
     "gender": "М",
     "weight": 1000,
@@ -48,7 +44,6 @@
   },
 
   {
-    "_id": "5f131c191f8a6ab093d90bca",
     "name": "Лара",
     "gender": "Ж",
     "weight": 850,

@@ -3,7 +3,10 @@ import GiraffeCard from "../GiraffeCard";
 import "./style.scss";
 
 export default function GiraffeContainer(props) {
-  const cards = props.giraffes.map((giraffe, i) => (
+  const arr = props.giraffes.sort(function (a, b) {
+    return new Date(a.created) - new Date(b.created);
+  });
+  const cards = arr.map((giraffe, i) => (
     <GiraffeCard
       key={i}
       giraffe={giraffe}

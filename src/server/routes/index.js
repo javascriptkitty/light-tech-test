@@ -31,16 +31,12 @@ module.exports = (app) => {
     giraffeController.findAll(req, res);
   });
 
-  app
-    .route("/api/giraffe/:id")
-    .get((req, res) => {
-      giraffeController.findById(req, res);
-    })
+  app.get("/api/giraffe/:id", (req, res) =>
+    giraffeController.findById(req, res)
+  );
 
-    .put((req, res) => {
-      giraffeController.update(req, res);
-    })
-    .delete((req, res) => {
-      giraffeController.delete(req, res);
-    });
+  /*   .route()
+    .get((req, res) => )
+    .put((req, res) => giraffeController.update(req, res))
+    .delete((req, res) => giraffeController.remove(req, res)); */
 };
