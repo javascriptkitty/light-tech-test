@@ -58,6 +58,13 @@ class Main extends React.Component {
     this.props.fetchAction();
   }
 
+  componentDidUpdate(prevProps) {
+    debugger;
+    console.log(prevProps, this.props);
+  }
+  componentWillReceiveProps(nextProp) {
+    debugger;
+  }
   render() {
     return (
       <div className="main" data-control="wheel">

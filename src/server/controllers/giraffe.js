@@ -4,14 +4,12 @@ module.exports = {
   findAll: function (req, res) {
     Giraffe.find()
       .then((dbModel) => {
-        console.log("all");
         res.json(dbModel);
       })
       .catch((err) => res.status(422).json(err));
   },
   findById: function (req, res) {
-    console.log("kitty");
-    Giraffe.findOne({ _id: "5f131bae1f8a6ab093d90bc7" })
+    Giraffe.findOne({ _id: req.params.id })
       .then((dbModel) => {
         console.log(dbModel);
         res.json(dbModel);
@@ -37,7 +35,8 @@ module.exports = {
   },
 
   remove: function (req, res) {
-    Giraffe.findById(req.params.id)
+    console.log("kitty");
+    Giraffe.findOne({ _id: req.params.id })
       .then((dbModel) => dbModel.remove())
       .then((result) => {
         res.json(result);

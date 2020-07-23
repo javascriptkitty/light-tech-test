@@ -6,8 +6,8 @@ import UploadImage from "../UploadImage";
 const GiraffeCard = (props) => {
   const [mode, setMode] = useState("view");
   const [editBlock, showEditBlock] = useState(false);
+  const [giraffe, updateGiraffe] = useState({ ...props.giraffe });
 
-  const giraffe = { ...props.giraffe };
   const onSetEdit = () => {
     setMode("edit");
     showEditBlock(false);
@@ -17,8 +17,10 @@ const GiraffeCard = (props) => {
     showEditBlock(!editBlock);
   };
 
-  const onInputChange = (event, key) => {
-    giraffe[key] = event.target.value;
+  const onInputChange = (key, event) => {
+    const newState = { ...giraffe };
+    newState[key] = event.target.value;
+    updateGiraffe(newState);
   };
 
   const onDelete = () => {
@@ -26,7 +28,6 @@ const GiraffeCard = (props) => {
   };
   const onSave = () => {
     setMode("view");
-
     props.onSaveGiraffe(giraffe._id, giraffe);
   };
   const cardClassName = mode == "view" ? "giraffeCard" : "editCard";

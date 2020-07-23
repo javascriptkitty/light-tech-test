@@ -4,7 +4,7 @@ import * as ActionType from "./actionTypes.js";
 export const updateAction = (index, newValue) => {
   return (dispatch) => {
     const url = `/api/giraffe/${index}`;
-    axios.put(url).then((res) => {
+    axios.put(url, newValue).then((res) => {
       dispatch({ type: ActionType.UPDATE_GIRAFFES, newValue });
     });
   };

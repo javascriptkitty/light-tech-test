@@ -24,7 +24,7 @@ const giraffeReducer = (state = initialState, action) => {
       currentIndex = newState.giraffes.findIndex(
         (el) => el._id === action.index
       );
-      newState.splice(currentIndex, i);
+      newState.giraffes.splice(currentIndex, 1);
       return newState;
     case "loading":
       return { ...state, loading: true };
