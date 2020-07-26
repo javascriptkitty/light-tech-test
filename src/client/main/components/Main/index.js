@@ -19,7 +19,7 @@ const mapStateToProps = (state) => {
     loading: state.loading,
   };
 };
-
+let i = 0;
 const mapDispatchToProps = (dispatch) => ({
   updateAction: (index, newValue) => dispatch(updateAction(index, newValue)),
   deleteAction: (index) => dispatch(deleteAction(index)),
@@ -33,8 +33,9 @@ class Main extends React.Component {
   }
 
   onAddGiraffe = () => {
+    debugger;
     this.props.addAction({
-      name: "Имя",
+      name: "Имя" + i++,
       gender: "-",
       weight: "-",
       height: "-",
@@ -58,13 +59,6 @@ class Main extends React.Component {
     this.props.fetchAction();
   }
 
-  componentDidUpdate(prevProps) {
-    debugger;
-    console.log(prevProps, this.props);
-  }
-  componentWillReceiveProps(nextProp) {
-    debugger;
-  }
   render() {
     return (
       <div className="main" data-control="wheel">
@@ -77,7 +71,6 @@ class Main extends React.Component {
         </div>
         <GiraffeContainer
           giraffes={this.props.giraffes}
-          onEditGiraffe={this.onEditGiraffe}
           onDeleteGiraffe={this.onDeleteGiraffe}
           onSaveGiraffe={this.onSaveGiraffe}
         />

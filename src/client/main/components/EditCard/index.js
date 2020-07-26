@@ -11,10 +11,10 @@ export default function EditCard(props) {
   return (
     <div className="editBlock">
       <button onClick={handleClick}>
-        <i className="far fa-trash-alt"></i> <span>Редактировать</span>
+        <i className="far fa-pencil-alt"></i> <span>Редактировать</span>
       </button>
       <button onClick={handleDelete}>
-        <i className="fas fa-pencil-alt"></i>
+        <i className="fas fa-trash-alt"></i>
         <span>Удалить</span>
       </button>
     </div>

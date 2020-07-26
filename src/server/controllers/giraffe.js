@@ -17,7 +17,6 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   create: function (req, res) {
-    console.log(req.body);
     Giraffe.create(req.body)
       .then((dbModel) => {
         console.log(dbModel);
@@ -35,7 +34,6 @@ module.exports = {
   },
 
   remove: function (req, res) {
-    console.log("kitty");
     Giraffe.findOne({ _id: req.params.id })
       .then((dbModel) => dbModel.remove())
       .then((result) => {

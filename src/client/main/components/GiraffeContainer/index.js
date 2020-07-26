@@ -3,12 +3,13 @@ import GiraffeCard from "../GiraffeCard";
 import "./style.scss";
 
 export default function GiraffeContainer(props) {
-  const arr = props.giraffes.sort(function (a, b) {
-    return new Date(a.created) - new Date(b.created);
+  const sorted = [...props.giraffes].sort(function (a, b) {
+    return new Date(b.created) - new Date(a.created);
   });
-  const cards = arr.map((giraffe, i) => (
+
+  const cards = sorted.map((giraffe, i) => (
     <GiraffeCard
-      key={i}
+      key={giraffe._id}
       giraffe={giraffe}
       onEditGiraffe={props.onEditGiraffe}
       onDeleteGiraffe={props.onDeleteGiraffe}
